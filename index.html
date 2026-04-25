@@ -1263,34 +1263,37 @@
       
       <div class="email-info">
         <span>✉️</span>
-        <a href="mailto:enes.parakazan.4@gmail.com">enes.perakazan.40@gmail.com</a>
+        <a href="mailto:enes.perakazan.40@gmail.com">enes.perakazan.40@gmail.com</a>
       </div>
     </div>
 
-   <form name="contact" method="POST" data-netlify="true" id="contact-form">
-  <input type="hidden" name="form-name" value="contact">
+    <div class="contact-right">
+      <form name="contact" method="POST" data-netlify="true" id="contact-form">
+        <input type="hidden" name="form-name" value="contact">
 
-  <!-- Honeypot désactivé temporairement pour debug -->
-  <!-- <input type="text" name="bot-field" style="display:none;"> -->
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Votre nom" required>
+        </div>
 
-  <div class="form-group">
-    <input type="text" name="name" placeholder="Votre nom" required>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Votre email" required>
+        </div>
+
+        <div class="form-group">
+          <textarea name="message" placeholder="Votre message..." rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+          Envoyer le message
+        </button>
+      </form>
+
+      <div id="form-success" class="success-message" style="display: none;">
+        ✓ Message envoyé avec succès ! Je vous répondrai rapidement.
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <input type="email" name="email" placeholder="Votre email" required>
-  </div>
-
-  <div class="form-group">
-    <textarea name="message" placeholder="Votre message..." rows="6" required></textarea>
-  </div>
-
-  <button type="submit" class="submit-btn" id="submit-btn">
-    <span>Envoyer le message</span>
-  </button>
-</form>
-</script>
-
+</section>
 <script>
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   const btn = document.getElementById('submit-btn');
@@ -1305,69 +1308,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     btn.innerHTML = '<span>Envoyer le message</span>';
   }, 1000);
 });
-</script>
-
-
-  // CURSOR
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  function animCursor() {
-    cursor.style.left = mx - 5 + 'px';
-    cursor.style.top = my - 5 + 'px';
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx - 18 + 'px';
-    ring.style.top = ry - 18 + 'px';
-    requestAnimationFrame(animCursor);
-  }
-  animCursor();
-  document.querySelectorAll('a,button,.skill-card,.project-card,.interest-tag').forEach(el => {
-    el.addEventListener('mouseenter', () => { ring.style.transform = 'scale(1.6)'; ring.style.opacity = '0.8'; });
-    el.addEventListener('mouseleave', () => { ring.style.transform = 'scale(1)'; ring.style.opacity = '0.5'; });
-  });
-
-  // INTERSECTION OBSERVER for fade-in & skill bars
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-          const w = parseFloat(bar.style.getPropertyValue('--w'));
-          bar.style.transform = `scaleX(${w})`;
-          bar.classList.add('animated');
-        });
-      }
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // CONTACT FORM
-  function handleSend() {
-    const inputs = document.querySelectorAll('.form-input, .form-textarea');
-    let ok = true;
-    inputs.forEach(i => { if (!i.value.trim()) ok = false; });
-    if (ok) {
-      document.getElementById('form-success').style.display = 'block';
-      inputs.forEach(i => i.value = '');
-    }
-  }
-
-  // NAV active highlight on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 200) current = s.id;
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
-    });
-  });
-
 </script>
 </body>
 </html>
