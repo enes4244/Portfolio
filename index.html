@@ -1150,30 +1150,34 @@
       </div>
     </div>
 
-<form action="https://api.lab2forms.com/submit" method="POST">
-<input type="hidden" name="form_access_key" value="889f59b4-db39-426b-b979-3151b4b377fa">
+<form 
+  name="contact" 
+  method="POST" 
+  data-netlify="true"
+  netlify-honeypot="bot-field">
 
-<div class="input-box">
-<input type="text" name="name" placeholder="Votre nom" required>
-</div>
+  <!-- Important pour Netlify -->
+  <input type="hidden" name="form-name" value="contact">
 
-<div class="input-box">
-<input type="email" name="email" placeholder="Votre email" required>
-</div>
-
-<div class="input-box">
-<textarea name="message" placeholder="Votre message..." required></textarea>
-</div>
-
-<button type="submit" class="btn">Envoyer</button>
-</form>
-      <div id="form-success" style="display:none;font-size:0.75rem;color:var(--accent);margin-top:0.5rem;letter-spacing:0.08em;">
-        ✓ Message envoyé avec succès !
-      </div>
-    </div>
+  <div class="input-box">
+    <input type="text" name="name" placeholder="Votre nom" required>
   </div>
-</section>
 
+  <div class="input-box">
+    <input type="email" name="email" placeholder="Votre email" required>
+  </div>
+
+  <div class="input-box">
+    <textarea name="message" placeholder="Votre message..." required></textarea>
+  </div>
+
+  <button type="submit" class="btn">Envoyer</button>
+</form>
+
+<!-- Message de succès (optionnel) -->
+<div id="form-success" style="display:none; color: green;">
+  ✓ Message envoyé avec succès !
+</div>
 <!-- FOOTER -->
 <footer>
   <span class="footer-name">Enes Parakazan</span>
