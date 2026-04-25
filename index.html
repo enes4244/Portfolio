@@ -1150,25 +1150,23 @@
       </div>
     </div>
 
-    <form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="8a9f59b4-db30-49c6-b977-93151b4ba77a">
+<form action="https://api.lab2forms.com/submit" method="POST">
+<input type="hidden" name="form_access_key" value="889f59b4-db39-426b-b979-3151b4b377fa">
+
+<div class="input-box">
+<input type="text" name="name" placeholder="Votre nom" required>
+</div>
+
+<div class="input-box">
+<input type="email" name="email" placeholder="Votre email" required>
+</div>
+
+<div class="input-box">
+<textarea name="message" placeholder="Votre message..." required></textarea>
+</div>
+
+<button type="submit" class="btn">Envoyer</button>
 </form>
-    <div class="contact-form fade-in">
-      <div class="form-group">
-        <label class="form-label">Nom</label>
-        <input type="text" class="form-input" placeholder="Votre nom">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="votre@email.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Message</label>
-        <textarea class="form-textarea" placeholder="Votre message..."></textarea>
-      </div>
-      <button class="btn btn-primary" style="align-self:flex-start;cursor:none;" onclick="handleSend()">
-        <span>Envoyer</span> <span>→</span>
-      </button>
       <div id="form-success" style="display:none;font-size:0.75rem;color:var(--accent);margin-top:0.5rem;letter-spacing:0.08em;">
         ✓ Message envoyé avec succès !
       </div>
