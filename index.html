@@ -1131,58 +1131,51 @@
 
 
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="section-header">
-    <span class="section-num">06</span>
-    <h2 class="section-title fade-in">Contact</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="contact-inner">
-    <div class="fade-in">
-      <h3 class="contact-heading">Travaillons<br><span>ensemble.</span></h3>
-      <p class="contact-text">Disponible pour des stages, alternances ou simplement pour échanger sur un projet. N'hésitez pas à me contacter.</p>
-      <div class="contact-links">
-        <a href="mailto:enes.parakazan4@gmail.com" class="contact-link">
-          <span class="contact-link-icon">✉</span>
-          <span>enes.parakazan.4@gmail.com</span>
-        </a>
+<!-- ====================== FORMULAIRE CONTACT ====================== -->
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2>Contact</h2>
+      <h3>Travaillons <span class="highlight">ensemble.</span></h3>
+      <p>Disponible pour des stages, alternances ou simplement pour échanger sur un projet.<br>N’hésitez pas à me contacter.</p>
+      
+      <div class="email-info">
+        <span>✉️</span>
+        <a href="mailto:enes.perakazan.40@gmail.com">enes.parakazan.40@gmail.com</a>
       </div>
     </div>
 
-<form 
-  name="contact" 
-  method="POST" 
-  data-netlify="true"
-  netlify-honeypot="bot-field">
+    <div class="contact-right">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
 
-  <!-- Important pour Netlify -->
-  <input type="hidden" name="form-name" value="contact">
+        <!-- Anti-spam honeypot -->
+        <input type="text" name="bot-field" style="display:none;">
 
-  <div class="input-box">
-    <input type="text" name="name" placeholder="Votre nom" required>
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Votre nom" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Votre email" required>
+        </div>
+
+        <div class="form-group">
+          <textarea name="message" placeholder="Votre message..." rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span>Envoyer le message</span>
+        </button>
+      </form>
+
+      <!-- Message de succès -->
+      <div id="form-success" class="success-message">
+        ✓ Message envoyé avec succès ! Je vous répondrai rapidement.
+      </div>
+    </div>
   </div>
-
-  <div class="input-box">
-    <input type="email" name="email" placeholder="Votre email" required>
-  </div>
-
-  <div class="input-box">
-    <textarea name="message" placeholder="Votre message..." required></textarea>
-  </div>
-
-  <button type="submit" class="btn">Envoyer</button>
-</form>
-
-<!-- Message de succès (optionnel) -->
-<div id="form-success" style="display:none; color: green;">
-  ✓ Message envoyé avec succès !
-</div>
-<!-- FOOTER -->
-<footer>
-  <span class="footer-name">Enes Parakazan</span>
-  <span class="footer-copy">© 2026 — BTS SIO SISR · Lycée Georges Brassens</span>
-</footer>
+</section>
 
 <script>
   // CURSOR
