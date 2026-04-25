@@ -6,7 +6,129 @@
 <title>Enes Parakazan — BTS SIO SISR</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
+ 
+ .contact-section {
+  padding: 100px 5%;
+  background: #0a0a0a;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact-left h2 {
+  font-size: 1.1rem;
+  color: #00f5ff;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.contact-left h3 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.highlight {
+  color: #00f5ff;
+}
+
+.contact-left p {
+  color: #aaaaaa;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.email-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+}
+
+.email-info a {
+  color: #00f5ff;
+  text-decoration: none;
+}
+
+.email-info a:hover {
+  text-decoration: underline;
+}
+
+/* ==================== FORM ==================== */
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 18px 20px;
+  background: #111111;
+  border: 2px solid #222222;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00f5ff;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 245, 255, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.submit-btn {
+  padding: 18px 40px;
+  background: #00f5ff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.submit-btn:hover {
+  background: #00d4dd;
+  transform: translateY(-3px);
+}
+
+/* Message succès */
+.success-message {
+  display: none;
+  padding: 20px;
+  background: rgba(0, 245, 255, 0.1);
+  border: 1px solid #00f5ff;
+  border-radius: 8px;
+  color: #00f5ff;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+ :root {
     --bg: #0a0a0f;
     --bg2: #111118;
     --bg3: #1a1a26;
