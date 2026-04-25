@@ -1263,16 +1263,16 @@
       
       <div class="email-info">
         <span>✉️</span>
-        <a href="mailto:enes.perakazan.40@gmail.com">enes.parakazan.40@gmail.com</a>
+        <a href="mailto:enes.perakazan.40@gmail.com">enes.perakazan.40@gmail.com</a>
       </div>
     </div>
 
     <div class="contact-right">
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
         <input type="hidden" name="form-name" value="contact">
 
-        <!-- Anti-spam honeypot -->
-        <input type="text" name="bot-field" style="display:none;">
+        <!-- Honeypot anti-spam (invisible) -->
+        <input type="text" name="bot-field" tabindex="-1" autocomplete="off" style="display:none !important; position:absolute; left:-9999px;">
 
         <div class="form-group">
           <input type="text" name="name" placeholder="Votre nom" required>
@@ -1286,7 +1286,7 @@
           <textarea name="message" placeholder="Votre message..." rows="6" required></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">
+        <button type="submit" class="submit-btn" id="submit-btn">
           <span>Envoyer le message</span>
         </button>
       </form>
@@ -1295,11 +1295,37 @@
       <div id="form-success" class="success-message">
         ✓ Message envoyé avec succès ! Je vous répondrai rapidement.
       </div>
+
+      <!-- Message d'erreur -->
+      <div id="form-error" class="error-message" style="display:none;">
+        ❌ Une erreur est survenue. Réessayez plus tard.
+      </div>
     </div>
   </div>
 </section>
 
 <script>
+// Gestion de l'envoi du formulaire avec Netlify
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  const form = this;
+  const successDiv = document.getElementById('form-success');
+  const errorDiv = document.getElementById('form-error');
+  const submitBtn = document.getElementById('submit-btn');
+
+  // Désactive le bouton pendant l'envoi
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>Envoi en cours...</span>';
+
+  // On laisse Netlify gérer l'envoi normalement (pas de fetch)
+  // Le JS sert juste à afficher le message de succès proprement
+  setTimeout(() => {
+    successDiv.style.display = 'block';
+    form.reset();
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<span>Envoyer le message</span>';
+  }, 800);
+});
+</script>
   // CURSOR
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
