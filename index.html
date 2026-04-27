@@ -7,6 +7,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
  
+/* VEILLE */
+.veille { background: var(--bg2); }
+.veille-intro { font-size: 0.85rem; line-height: 1.8; color: var(--text2); max-width: 700px; margin-bottom: 3rem; }
+.veille-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.veille-card { background: var(--bg3); border: 1px solid var(--border); padding: 2rem; position: relative; overflow: hidden; transition: all 0.3s; }
+.veille-card:hover { border-color: rgba(0,229,255,0.25); transform: translateY(-4px); }
+.veille-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent2), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.veille-card:hover::before { transform: scaleX(1); }
+.veille-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+.veille-tag { display: inline-block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.3rem 0.75rem; border: 1px solid; margin-bottom: 1.25rem; }
+.tag-menace { border-color: #f43f5e; color: #f43f5e; }
+.tag-bonnes-pratiques { border-color: var(--accent2); color: var(--accent2); }
+.veille-title { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.2; }
+.veille-desc { font-size: 0.78rem; line-height: 1.7; color: var(--text2); margin-bottom: 1.25rem; }
+.veille-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.veille-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 3rem; }
+.veille-stat { background: var(--bg2); padding: 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.veille-stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--accent3); line-height: 1; }
+.veille-stat-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--t
+
  .contact-section {
   padding: 100px 5%;
   background: #0a0a0a;
@@ -1014,67 +1034,82 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="projects" id="projects">
+<!-- VEILLE TECHNOLOGIQUE -->
+<section class="veille" id="veille">
   <div class="section-header">
     <span class="section-num">03</span>
-    <h2 class="section-title fade-in">Projets</h2>
+    <h2 class="section-title fade-in">Veille Technologique</h2>
     <div class="section-line"></div>
   </div>
-  <div class="projects-grid">
 
-    <div class="project-card fade-in">
-      <span class="project-num">01</span>
-      <div class="project-tag tag-sisr">SISR</div>
-      <h3 class="project-title">Infrastructure réseau virtualisée</h3>
-      <p class="project-desc">Mise en place d'un réseau complet avec VLANs, routage inter-VLAN, serveur DHCP et DNS dans un environnement virtuel. Simulation d'une architecture d'entreprise PME.</p>
-      <div class="project-techs">
-        <span class="tech-pill">Cisco IOS</span>
-        <span class="tech-pill">VirtualBox</span>
-        <span class="tech-pill">VLAN</span>
+  <p class="veille-intro fade-in">
+    Sujet étudié : <strong style="color:var(--accent)">Les menaces liées aux objets connectés (IoT)</strong>. Avec l'explosion du nombre d'appareils connectés, les risques de sécurité se multiplient et évoluent constamment. Cette veille analyse les principales vulnérabilités et les bonnes pratiques pour y faire face.
+  </p>
+
+  <div class="veille-stat-row fade-in">
+    <div class="veille-stat">
+      <span class="veille-stat-num">15B+</span>
+      <span class="veille-stat-label">Appareils IoT connectés en 2024</span>
+    </div>
+    <div class="veille-stat">
+      <span class="veille-stat-num">57%</span>
+      <span class="veille-stat-label">Des appareils IoT vulnérables à des attaques critiques</span>
+    </div>
+    <div class="veille-stat">
+      <span class="veille-stat-num">+300%</span>
+      <span class="veille-stat-label">D'attaques IoT en 3 ans selon Palo Alto Networks</span>
+    </div>
+  </div>
+
+  <div class="veille-grid">
+
+    <div class="veille-card fade-in">
+      <span class="veille-icon">🔓</span>
+      <div class="veille-tag tag-menace">Menace #1</div>
+      <h3 class="veille-title">Mots de passe par défaut</h3>
+      <p class="veille-desc">La majorité des appareils IoT (caméras, routeurs, thermostats) sont livrés avec des identifiants par défaut jamais changés. Les botnets comme <em>Mirai</em> exploitent massivement cette faiblesse pour prendre le contrôle de milliers de devices en quelques heures.</p>
+      <div class="veille-pills">
+        <span class="tech-pill">Botnet Mirai</span>
+        <span class="tech-pill">Brute force</span>
+        <span class="tech-pill">Credential stuffing</span>
       </div>
-      <div class="project-footer"><span class="project-arrow">↗</span></div>
     </div>
 
-    <div class="project-card fade-in">
-      <span class="project-num">02</span>
-      <div class="project-tag tag-secu">Sécurité</div>
-      <h3 class="project-title">Sécurisation d'un serveur Linux</h3>
-      <p class="project-desc">Durcissement d'un serveur Debian : configuration SSH, règles UFW, fail2ban, désactivation des services inutiles et audit de sécurité via Lynis.</p>
-      <div class="project-techs">
-        <span class="tech-pill">Debian</span>
-        <span class="tech-pill">SSH</span>
-        <span class="tech-pill">UFW</span>
-  
+    <div class="veille-card fade-in">
+      <span class="veille-icon">📡</span>
+      <div class="veille-tag tag-menace">Menace #2</div>
+      <h3 class="veille-title">Communications non chiffrées</h3>
+      <p class="veille-desc">Beaucoup d'objets connectés transmettent leurs données en clair (HTTP, Telnet). Un attaquant sur le même réseau peut intercepter ces échanges via une attaque Man-in-the-Middle et récupérer des données sensibles ou injecter des commandes.</p>
+      <div class="veille-pills">
+        <span class="tech-pill">Man-in-the-Middle</span>
+        <span class="tech-pill">Sniffing</span>
+        <span class="tech-pill">HTTP non sécurisé</span>
       </div>
-      <div class="project-footer"><span class="project-arrow">↗</span></div>
     </div>
 
-    <div class="project-card fade-in">
-      <span class="project-num">03</span>
-      <div class="project-tag tag-sisr">SISR</div>
-      <h3 class="project-title">Déploiement Active Directory</h3>
-      <p class="project-desc">Installation et configuration d'un contrôleur de domaine sous Windows Server. Gestion des utilisateurs, GPO, politique de mots de passe et partages réseau.</p>
-      <div class="project-techs">
-        <span class="tech-pill">Windows Server</span>
-        <span class="tech-pill">Active Directory</span>
-        <span class="tech-pill">GPO</span>
-        <span class="tech-pill">DNS</span>
+    <div class="veille-card fade-in">
+      <span class="veille-icon">⚠️</span>
+      <div class="veille-tag tag-menace">Menace #3</div>
+      <h3 class="veille-title">Firmware non mis à jour</h3>
+      <p class="veille-desc">Les fabricants publient rarement des correctifs, et les utilisateurs ne les appliquent presque jamais. Des failles connues restent exploitables pendant des années, faute de mécanisme de mise à jour automatique.</p>
+      <div class="veille-pills">
+        <span class="tech-pill">CVE non patchées</span>
+        <span class="tech-pill">Firmware obsolète</span>
+        <span class="tech-pill">Zero-day</span>
       </div>
-      <div class="project-footer"><span class="project-arrow">↗</span></div>
     </div>
 
-    <div class="project-card fade-in">
-      <span class="project-num">04</span>
-      <div class="project-tag tag-dev">Scripting</div>
-      <h3 class="project-title">Script de monitoring système</h3>
-      <p class="project-desc">Script Bash de supervision : utilisation CPU/RAM, espace disque, services actifs avec alertes par mail. Automatisation via cron pour une surveillance continue.</p>
-      <div class="project-techs">
-        <span class="tech-pill">Bash</span>
-        <span class="tech-pill">Cron</span>
-        <span class="tech-pill">Linux</span>
+    <div class="veille-card fade-in">
+      <span class="veille-icon">🛡️</span>
+      <div class="veille-tag tag-bonnes-pratiques">Bonnes pratiques</div>
+      <h3 class="veille-title">Se protéger efficacement</h3>
+      <p class="veille-desc">Isoler les appareils IoT sur un VLAN dédié, forcer le changement des mots de passe par défaut, activer les mises à jour automatiques, surveiller le trafic réseau anormal et privilégier des appareils certifiés.</p>
+      <div class="veille-pills">
+        <span class="tech-pill">VLAN IoT</span>
+        <span class="tech-pill">Segmentation réseau</span>
+        <span class="tech-pill">Zero Trust</span>
+        <span class="tech-pill">IDS/IPS</span>
       </div>
-      <div class="project-footer"><span class="project-arrow">↗</span></div>
     </div>
 
   </div>
