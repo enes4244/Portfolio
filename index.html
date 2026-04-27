@@ -1321,8 +1321,8 @@
     </div>
 
     <div class="contact-right">
-<form action="https://formspree.io/f/mjgjqvrk"      <input type="hidden" name="form-name" value="contact">
-
+<form id="contact-form">
+<input type="hidden" name="access_key" value="8a9f59b4-db30-49c6-b977-93151b4ba77a">
         <div class="form-group">
           <input type="text" name="name" placeholder="Votre nom" required>
         </div>
@@ -1414,7 +1414,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     const form = e.target;
     const data = new FormData(form);
     
-    const response = await fetch('https://formspree.io/f/mjgjqvrk',
+    const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
