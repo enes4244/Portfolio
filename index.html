@@ -487,72 +487,7 @@
   }
   .skill-bar-fill.animated { transform: scaleX(1); }
 
-  /* PROJECTS */
-  .projects { background: var(--bg2); }
-  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .project-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
-  .project-card:hover { border-color: rgba(0,229,255,0.25); }
-  .project-card:hover .project-arrow { transform: translate(4px, -4px); }
-  .project-num {
-    font-size: 3rem;
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    color: rgba(255,255,255,0.04);
-    position: absolute;
-    top: 1rem; right: 1.5rem;
-    line-height: 1;
-    pointer-events: none;
-  }
-  .project-tag {
-    display: inline-block;
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.75rem;
-    border: 1px solid;
-    margin-bottom: 1.25rem;
-  }
-  .tag-sisr { border-color: var(--accent); color: var(--accent); }
-  .tag-dev { border-color: var(--accent2); color: var(--accent2); }
-  .tag-secu { border-color: var(--accent3); color: var(--accent3); }
-  .project-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
-  .project-desc {
-    font-size: 0.78rem;
-    line-height: 1.7;
-    color: var(--text2);
-    margin-bottom: 1.5rem;
-  }
-  .project-techs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .tech-pill {
-    font-size: 0.62rem;
-    letter-spacing: 0.08em;
-    padding: 0.25rem 0.65rem;
-    background: rgba(255,255,255,0.05);
-    border-radius: 1px;
-    color: var(--text2);
-  }
-  .project-footer {
-    display: flex; justify-content: flex-end; margin-top: 1.5rem;
-  }
-  .project-arrow {
-    font-size: 1.1rem;
-    color: var(--accent);
-    transition: transform 0.3s;
-  }
-
+ 
   /* FORMATION */
   .formation-card {
     border: 1px solid var(--border);
@@ -921,15 +856,14 @@
   <ul class="nav-links">
     <li><a href="#about">Profil</a></li>
     <li><a href="#skills">Compétences</a></li>
-    <li><a href="#projects">Veille</a></li>
+    <li><a href="#veille">Veille</a></li>
     <li><a href="#formation">Formation</a></li>
     <li><a href="#stage">Stage</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<a> href="#veille" class="btn btn-primary"><span>Voir mes projets</span> <span>→</span></a>
-
+<section class="hero"></section><a> href="#veille" class="btn btn-primary"><span>Voir mes projets</span> <span>→</span></a>
   <div class="hero-tag">Portfolio — BTS SIO SISR</div>
 
   <h1>
@@ -949,7 +883,7 @@
   </div>
 
   <div class="hero-cta">
-    <a href="#projects" class="btn btn-primary"><span>Voir mes projets</span> <span>→</span></a>
+    <a href="#veille" class="btn btn-primary"><span>Voir mes projets</span> <span>→</span></a>
     <a href="#contact" class="btn btn-outline">Me contacter</a>
   </div>
 
