@@ -1320,7 +1320,20 @@
     </div>
 
     <div class="contact-right">
-<form id="contact-form">
+<form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+  <input type="hidden" name="access_key" value="8a9f59b4-db30-49c6-b977-93151b4ba77a">
+  
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Votre nom" required>
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Votre email" required>
+  </div>
+  <div class="form-group">
+    <textarea name="message" placeholder="Votre message..." rows="6" required></textarea>
+  </div>
+  <button type="submit" class="submit-btn">Envoyer le message</button>
+</form>
 <input type="hidden" name="access_key" value="8a9f59b4-db30-49c6-b977-93151b4ba77a">
         <div class="form-group">
           <input type="text" name="name" placeholder="Votre nom" required>
