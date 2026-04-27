@@ -784,7 +784,91 @@
     letter-spacing: 0.05em;
   }
   .footer-copy { font-size: 0.65rem; letter-spacing: 0.08em; color: var(--text2); }
-
+/* VEILLE TECHNOLOGIQUE */
+.veille { background: var(--bg2); }
+.veille-intro {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: var(--text2);
+  max-width: 760px;
+  margin-bottom: 3rem;
+}
+.veille-stat-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.veille-stat {
+  flex: 1;
+  min-width: 180px;
+  padding: 1.5rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.veille-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+.veille-stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.veille-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.veille-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.veille-card:hover { border-color: rgba(0,229,255,0.25); transform: translateY(-4px); }
+.veille-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+.veille-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid;
+  margin-bottom: 1rem;
+}
+.tag-menace { border-color: var(--accent3); color: var(--accent3); }
+.tag-bonnes-pratiques { border-color: var(--accent); color: var(--accent); }
+.veille-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.veille-desc {
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: var(--text2);
+  margin-bottom: 1.25rem;
+}
+.veille-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .veille-grid { grid-template-columns: 1fr; }
+}
   /* ANIMATIONS */
   .fade-in {
     opacity: 0;
@@ -837,18 +921,14 @@
   <ul class="nav-links">
     <li><a href="#about">Profil</a></li>
     <li><a href="#skills">Compétences</a></li>
-    <li><a href="#projects">Projets</a></li>
+    <li><a href="#projects">Veille</a></li>
     <li><a href="#formation">Formation</a></li>
     <li><a href="#stage">Stage</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb orb1"></div>
-  <div class="hero-orb orb2"></div>
+<a> href="#veille" class="btn btn-primary"><span>Voir mes projets</span> <span>→</span></a>
 
   <div class="hero-tag">Portfolio — BTS SIO SISR</div>
 
